@@ -42,7 +42,7 @@ const style = StyleSheet.create({
         flex:1,
         alignItems:'center',
         justifyContent:'space-around',
-        marginTop: Constants.statusBarHeight
+        marginTop: Constants.statusBarHeight,
     },
     title:{
         fontSize:RFValue(38),

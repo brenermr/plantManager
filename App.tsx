@@ -1,5 +1,5 @@
 import React from "react";
-import { Welcome } from './src/pages/'
+import { UserIdentification } from './src/pages/UserIdentification'
 import AppLoading from "expo-app-loading";
 import {
   useFonts, 
@@ -21,7 +21,7 @@ export default function App(){
     )
   }else{
     return(
-      <Welcome/>
+      <UserIdentification/>
     )
   }
 }
