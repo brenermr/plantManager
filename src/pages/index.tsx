@@ -1,22 +1,37 @@
 import React from "react";
-import {Text, View, StyleSheet, Image} from 'react-native'
+import {
+    Text, 
+    View, 
+    StyleSheet, 
+    Image, 
+    TouchableOpacity,
+    Dimensions
+} from 'react-native'
+import { AntDesign } from '@expo/vector-icons';
 import Constants from 'expo-constants'
+import { RFValue } from "react-native-responsive-fontsize";
 
-
-import { Button } from "../components/Button";
+// My Components
 import colors from "../../styles/colors";
-import watering from '../assets/watering.png' 
+import watering from '../assets/watering.png'
+import fonts from "../../styles/fonts";
 
 export function Welcome(){
     return(
         <View style={style.container}> 
             <Text style={style.title}>
-             Gerencie {'\n'}
-             suas plantas {'\n'}
-             de forma fácil</Text>
-            <Image source={watering} style={style.image}/>
-            <Text style={style.subtitle}>Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você sempre que precisar.</Text>
-            <Button title="Avançar"/>
+                Gerencie {'\n'}
+                suas plantas 
+                de {'\n'} forma fácil
+             </Text>
+            <Image source={watering} style={style.image} resizeMode="contain"/>
+            <Text style={style.subtitle}>
+                Não esqueça mais de regar suas {'\n'} plantas. 
+                Nós cuidamos de lembrar você {'\n'} sempre que precisar.
+            </Text>
+            <TouchableOpacity style={style.button} activeOpacity={0.5}>
+                 <AntDesign name="right" size={32} color="#FFF" />            
+            </TouchableOpacity>
         </View>
     )
 }
@@ -26,25 +41,37 @@ const style = StyleSheet.create({
     container:{
         flex:1,
         alignItems:'center',
-        justifyContent:'space-between',
+        justifyContent:'space-around',
         marginTop: Constants.statusBarHeight
     },
     title:{
-        marginTop:40,
-        fontSize:32,
-        fontWeight: 'bold',
+        fontSize:RFValue(38),
         textAlign:"center",
-        color: colors.heading
+        color: colors.heading,
+        fontFamily: fonts.bold
     },
     subtitle:{
         textAlign:'center',
-        fontSize:18,
+        fontSize:RFValue(17),
         paddingHorizontal:30,
-        color: colors.heading
+        color: colors.heading,
+        fontFamily: fonts.regular
     },
     image:{
-        width:293, 
-        height:285
+        height:Dimensions.get('window').width * 0.7
+    },
+    buttonText:{
+        color:colors.white,
+        fontSize:14
+    },
+    button:{
+        backgroundColor:colors.green,
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:16,
+        marginBottom:10,
+        height:RFValue(56),
+        width:RFValue(56)
     },
 
 })
