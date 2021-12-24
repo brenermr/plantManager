@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, TextInput } from 'react-native'
 import Constants from 'expo-constants'
 import colors from '../../styles/colors'
 import { Button } from '../components/Button'
+import fonts from '../../styles/fonts'
 
 export function UserIdentification() {
     return (
@@ -10,6 +11,7 @@ export function UserIdentification() {
             <View style={style.content}>
                 <View style={style.form}>
                         <Text style={style.emoji}>😄</Text>
+                        <Text style={style.title}>Como podemos {'\n'} chamar você?</Text>
                         <TextInput
                             style={style.input}
                             placeholder='Digite seu nome'
@@ -43,13 +45,20 @@ const style = StyleSheet.create({
     emoji:{
         fontSize:44
     },
+    title:{
+        marginTop:10,
+        color: colors.heading,
+        fontSize:24,
+        fontFamily: fonts.bold,
+        textAlign:'center'
+    },
     input:{
         borderBottomWidth:1,
         borderColor:colors.gray,
         color: colors.heading,
         width:'100%',
         fontSize:18,
-        marginTop:50,
+        marginTop:40,
         padding:10,
         textAlign:'center'
     }
