@@ -15,8 +15,13 @@ import { RFValue } from "react-native-responsive-fontsize";
 import colors from "../../styles/colors";
 import watering from '../assets/watering.png'
 import fonts from "../../styles/fonts";
+import { useNavigation } from "@react-navigation/native";
 
 export function Welcome(){
+    const navigation = useNavigation()
+    function handleStart(){
+        navigation.navigate('UserIdentification')
+    }
     return(
         <View style={style.container}> 
             <Text style={style.title}>
@@ -29,7 +34,7 @@ export function Welcome(){
                 Não esqueça mais de regar suas {'\n'} plantas. 
                 Nós cuidamos de lembrar você {'\n'} sempre que precisar.
             </Text>
-            <TouchableOpacity style={style.button} activeOpacity={0.5}>
+            <TouchableOpacity style={style.button} activeOpacity={0.5} onPress={handleStart}>
                  <AntDesign name="right" size={32} color="#FFF" />            
             </TouchableOpacity>
         </View>

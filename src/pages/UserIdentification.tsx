@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
-import { Text, StyleSheet, View, TextInput } from 'react-native'
+import { 
+    Text, 
+    StyleSheet, 
+    View, 
+    TextInput, 
+    KeyboardAvoidingView,
+    Platform 
+} from 'react-native'
 import Constants from 'expo-constants'
 
 // MyComponents
 import colors from '../../styles/colors'
 import { Button } from '../components/Button'
 import fonts from '../../styles/fonts'
+import { useNavigation } from '@react-navigation/native'
 
 export function UserIdentification() {
+    const navigation = useNavigation()
     const [isFocused, setIsFocused]= useState(false);
     const [isFilled, setIsFilled] = useState(false)
-    const [name, setName] = useState<string>()
+    const [name, setName] = useState<string>('')
 
     function handleInputBlur(){
         setIsFocused(false)
@@ -23,12 +32,18 @@ export function UserIdentification() {
         setIsFilled(!!value)
         setName(value)
     }
+    function handleStart(){
+        isFilled != false ? navigation.navigate('Confirmation'): alert('Nome não pode ser vazio')
+    }
     return (
         <View style={style.container}>
+            <KeyboardAvoidingView style={style.content} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <View style={style.content}>
                 <View style={style.form}>
                     <>
-                        <Text style={style.emoji}>😄</Text>
+                        <Text style={style.emoji}>
+                            {isFilled ? '😄': '😭' } 
+                        </Text>
                         <Text style={style.title}>Como podemos {'\n'} chamar você?</Text>
                         <TextInput
                             style={[
@@ -44,10 +59,11 @@ export function UserIdentification() {
                         />
                     </>
                         <View style={style.footer}> 
-                            <Button activeOpacity={0.7} title='Confirmar'/>
+                            <Button activeOpacity={0.7} title='Confirmar' onPress={handleStart}/>
                         </View>
                 </View>
             </View>
+            </KeyboardAvoidingView>
 
         </View>
     )
