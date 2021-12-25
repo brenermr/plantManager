@@ -1,22 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, StyleSheet, View, TextInput } from 'react-native'
 import Constants from 'expo-constants'
+
+// MyComponents
 import colors from '../../styles/colors'
 import { Button } from '../components/Button'
 import fonts from '../../styles/fonts'
 
 export function UserIdentification() {
+    const [isFocused, setIsFocused]= useState(false);
+    const [isFilled, setIsFilled] = useState(false)
+    const [name, setName] = useState<string>()
+
+    function handleInputBlur(){
+        setIsFocused(false)
+        setIsFilled(!!name);
+    }
+    function handleInputFocus(){
+        setIsFocused(true)
+    }
+    function handleInputChange(value:string){
+        setIsFilled(!!value)
+        setName(value)
+    }
     return (
         <View style={style.container}>
             <View style={style.content}>
                 <View style={style.form}>
+                    <>
                         <Text style={style.emoji}>😄</Text>
                         <Text style={style.title}>Como podemos {'\n'} chamar você?</Text>
                         <TextInput
-                            style={style.input}
+                            style={[
+                                style.input, 
+                                (isFilled || isFocused) && {borderColor: colors.green}
+
+                            ]}
                             placeholder='Digite seu nome'
+                            onBlur={handleInputBlur}
+                            onFocus={handleInputFocus}
+                            onChangeText={handleInputChange}
+
                         />
-                        <Button activeOpacity={0.7} title='Confirmar'/>
+                    </>
+                        <View style={style.footer}> 
+                            <Button activeOpacity={0.7} title='Confirmar'/>
+                        </View>
                 </View>
             </View>
 
@@ -61,5 +90,9 @@ const style = StyleSheet.create({
         marginTop:40,
         padding:10,
         textAlign:'center'
+    },
+    footer:{
+        width: '100%',
+        paddingHorizontal:20
     }
 })

@@ -17,12 +17,12 @@ export function Button({title, ...rest}:ButtonProps){
 
 const style = StyleSheet.create({
     button:{
-        width: 231,
         height:56,
         backgroundColor:colors.green,
         justifyContent:'center',
         marginTop:40,
-        borderRadius:16
+        borderRadius:16,
+        alignItems:"center"
     },
     buttonText:{
         textAlign:"center",
