@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import colors from '../../styles/colors';
 import { Welcome } from '../pages/Welcome/';
 import { UserIdentification } from '../pages/UserIdentification';
-import { ConfirmationScreenApp } from '../pages/ConfirmationScreenApp';
+import { ConfirmationScreenApp } from '../pages/Confirmation/';
 
 const stackRoutes = createNativeStackNavigator();
 

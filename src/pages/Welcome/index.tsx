@@ -12,14 +12,14 @@ export function Welcome(){
     return(
         <Container>
             <Title>
-            Gerencie {'\n'}
-            suas plantas 
-            de {'\n'} forma fácil
+                Gerencie {'\n'}
+                suas plantas 
+                de {'\n'} forma fácil
             </Title>
             <Imagem source={watering} resizeMode="contain"/>
             <SubTitle>
-            Não esqueça mais de regar suas {'\n'} plantas. 
-            Nós cuidamos de lembrar você {'\n'} sempre que precisar.
+                Não esqueça mais de regar suas {'\n'} plantas. 
+                Nós cuidamos de lembrar você {'\n'} sempre que precisar.
             </SubTitle>
             <Button activeOpacity={0.5} onPress={handleStart}>
                 <Icon name="right"/>

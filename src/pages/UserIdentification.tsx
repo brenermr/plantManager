@@ -12,7 +12,7 @@ import { RFValue } from 'react-native-responsive-fontsize'
 
 // MyComponents
 import colors from '../../styles/colors'
-import { Button } from '../components/Button'
+import { Button } from '../components/Button/'
 import fonts from '../../styles/fonts'
 import { useNavigation } from '@react-navigation/native'
 
