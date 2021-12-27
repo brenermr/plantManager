@@ -7,6 +7,8 @@ import {
   Jost_700Bold, 
   Jost_500Medium
 } from '@expo-google-fonts/jost'
+import { ThemeProvider } from "styled-components";
+import theme from "./src/global/styles/theme";
 
 
 export default function App(){
@@ -21,7 +23,9 @@ export default function App(){
     )
   }else{
     return(
-      <Routes/>
+      <ThemeProvider theme={theme}>
+          <Routes/>
+      </ThemeProvider>
     )
   }
 }

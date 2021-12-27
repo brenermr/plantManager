@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from 'react-native'
+import { RFValue } from "react-native-responsive-fontsize";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 import { Button } from "../components/Button";
@@ -37,11 +38,12 @@ const style = StyleSheet.create({
 
     },
     emoji:{
-        fontSize:96
+        fontSize:RFValue(96)
+        
     },
     title:{
         marginTop:86,
-        fontSize:24,
+        fontSize:RFValue(24),
         fontFamily:fonts.medium,
         color: colors.heading
     },
@@ -49,7 +51,7 @@ const style = StyleSheet.create({
         marginTop:16,
         textAlign:"center",
         fontFamily:fonts.regular,
-        fontSize:17,
+        fontSize:RFValue(17),
         color: colors.heading,
 
     },

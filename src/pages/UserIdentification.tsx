@@ -8,6 +8,7 @@ import {
     Platform 
 } from 'react-native'
 import Constants from 'expo-constants'
+import { RFValue } from 'react-native-responsive-fontsize'
 
 // MyComponents
 import colors from '../../styles/colors'
@@ -88,12 +89,12 @@ const style = StyleSheet.create({
         alignItems:'center'
     },
     emoji:{
-        fontSize:44
+        fontSize:RFValue(44)
     },
     title:{
         marginTop:10,
         color: colors.heading,
-        fontSize:24,
+        fontSize:RFValue(24),
         fontFamily: fonts.bold,
         textAlign:'center'
     },
@@ -102,7 +103,7 @@ const style = StyleSheet.create({
         borderColor:colors.gray,
         color: colors.heading,
         width:'100%',
-        fontSize:18,
+        fontSize:RFValue(18),
         marginTop:40,
         padding:10,
         textAlign:'center'
