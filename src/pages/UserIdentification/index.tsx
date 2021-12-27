@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import { 
     Platform 
 } from 'react-native'
-import Constants from 'expo-constants'
-import { RFValue } from 'react-native-responsive-fontsize'
+import { useNavigation } from '@react-navigation/native'
 
 // MyComponents
 import { Button } from '../../components/Button/'
 import colors from '../../../styles/colors'
-import { useNavigation } from '@react-navigation/native'
 import { Container, Content, Emoji, Footer, Form, Input, KeyBoardView, Title } from './styles'
 
 export function UserIdentification() {
@@ -33,7 +31,7 @@ export function UserIdentification() {
     }
     return (
         <Container>
-            <KeyBoardView  behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+            <KeyBoardView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <Content>
                 <Form>
                     <>
