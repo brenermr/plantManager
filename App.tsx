@@ -24,8 +24,7 @@ export default function App(){
   }else{
     return(
       <ThemeProvider theme={theme}>
-          <Routes/>
-          
+          <Routes/>       
       </ThemeProvider>
     )
   }
