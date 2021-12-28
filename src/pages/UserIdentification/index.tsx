@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { 
-    Platform 
+    Platform,
+    Keyboard,
+    TouchableWithoutFeedback
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -8,6 +10,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Button } from '../../components/Button/'
 import colors from '../../../styles/colors'
 import { Container, Content, Emoji, Footer, Form, Input, KeyBoardView, Title } from './styles'
+
 
 export function UserIdentification() {
     const navigation = useNavigation()
@@ -32,33 +35,34 @@ export function UserIdentification() {
     return (
         <Container>
             <KeyBoardView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-            <Content>
-                <Form>
-                    <>
-                        <Emoji>
-                            {isFilled ? '😄': '😭' } 
-                        </Emoji>
-                        <Title >Como podemos {'\n'} chamar você?</Title>
-                        <Input
-                            style={
-                                (isFilled || isFocused) && {borderColor: colors.green}
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <Content>
+                        <Form>
+                            <>
+                                <Emoji>
+                                    {isFilled ? '😄': '😭' } 
+                                </Emoji>
+                                <Title >Como podemos {'\n'} chamar você?</Title>
+                                <Input
+                                    style={
+                                        (isFilled || isFocused) && {borderColor: colors.green}
 
-                            }
-                            placeholder='Digite seu nome'
-                            onBlur={handleInputBlur}
-                            onFocus={handleInputFocus}
-                            onChangeText={handleInputChange}
+                                    }
+                                    placeholder='Digite seu nome'
+                                    onBlur={handleInputBlur}
+                                    onFocus={handleInputFocus}
+                                    onChangeText={handleInputChange}
 
-                        />
-                    </>
-                        <Footer> 
-                            <Button activeOpacity={0.7} title='Confirmar' onPress={handleStart}/>
-                        </Footer>
-                </Form>
-            </Content>
+                                />
+                            </>
+                                <Footer> 
+                                    <Button activeOpacity={0.7} title='Confirmar' onPress={handleStart}/>
+                                </Footer>
+                        </Form>
+                    </Content>
+            </TouchableWithoutFeedback>
             </KeyBoardView>
 
         </Container>
     )
 }
-
