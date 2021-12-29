@@ -8,7 +8,7 @@ export const Container = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items:center;
-    padding: ${RFValue(20)}px;
+    padding: ${RFValue(20)}px 0;
     margin-top:${Constants.statusBarHeight}px;
 `
 export const Infos = styled.View`
