@@ -1,5 +1,4 @@
 import styled from "styled-components/native"
-import Constants  from "expo-constants"
 import { RFValue } from "react-native-responsive-fontsize"
 
 export const Container = styled.View`
@@ -15,7 +14,7 @@ export const Title = styled.Text`
     color: ${({theme})=>theme.colors.heading};
     font-family: ${({theme})=>theme.fonts.medium};
     margin-top:15px;
-    line-height:20px;
+    line-height: ${RFValue(20)}px;
 `
 
 export const SecondaryTitle = styled.Text`
@@ -23,5 +22,5 @@ export const SecondaryTitle = styled.Text`
     color: ${({theme})=>theme.colors.heading};
     font-family: ${({theme})=>theme.fonts.regular};
     margin-top:15px;
-    line-height:20px;
+    line-height: ${RFValue(20)}px
 `

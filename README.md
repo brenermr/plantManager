@@ -20,13 +20,19 @@ Projeto desenvolvido graças a o bonus da rocketseat com relação a NLW 5
 
 ## Installation
 
-Install my-project with npm or npm
+Install my-project with npm 
 
 ```bash
   cd plantManager
   
   npm install
 
+```
+
+Or yarn
+
+```bash
+  cd plantManager
+
   yarn install
 ```
-    
