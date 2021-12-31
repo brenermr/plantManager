@@ -1,6 +1,10 @@
 import styled from "styled-components/native"
 import { RFValue } from "react-native-responsive-fontsize"
+import { FlatListProps } from "react-native"
 import React from 'react'
+
+
+
 export const Container = styled.View`
     flex:1;
     background-color: ${({theme})=>theme.colors.background};
